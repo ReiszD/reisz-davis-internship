@@ -92,11 +92,20 @@ const NewItems = () => {
           </div>
           {loading ? (
             new Array(4).fill(0).map((_, index) => (
-              <div key={index} className="p-4">
-                <div className="animate-pulse rounded-xl bg-gray-300 h-64 w-full" />
-                <div className="mt-3 space-y-2">
-                  <div className="h-4 bg-gray-300 rounded w-2/3"></div>
-                  <div className="h-3 bg-gray-300 rounded w-1/3"></div>
+              <div key={index} className="col-md-3 mb-4">
+                <div className="card placeholder-glow">
+                  <div
+                    className="card-img-top placeholder"
+                    style={{ height: "200px" }}
+                  ></div>
+                  <div className="card-body">
+                    <h5 className="card-title">
+                      <span className="placeholder col-6"></span>
+                    </h5>
+                    <p className="card-text">
+                      <span className="placeholder col-4"></span>
+                    </p>
+                  </div>
                 </div>
               </div>
             ))
