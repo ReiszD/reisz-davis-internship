@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const BrowseByCategory = () => {
-  // Any comment
+  // FROM MAIN!!! DO NOT REMOVE
   return (
     <section id="section-category" className="no-top">
       <div className="container">
