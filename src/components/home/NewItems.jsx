@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import nftImage from "../../images/nftImage.jpg";
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Countdown = ({ expiryDate }) => {
   const [time, setTime] = useState(Date.now());
@@ -85,7 +85,13 @@ const NewItems = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <h2>New Items</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -113,7 +119,13 @@ const NewItems = () => {
             <OwlCarousel className="owl-theme" {...options}>
               {items.map((item, index) => (
                 <div className="gap-4" key={item.id || index}>
-                  <div className="nft__item">
+                  <div
+                    className="nft__item"
+                    data-aos="fade-in"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                  >
                     <div className="author_list_pp">
                       <Link
                         to={`/author/${item.authorId}`}

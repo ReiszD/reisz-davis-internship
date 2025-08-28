@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthorImage from "../../images/author_thumbnail.jpg";
 import axios from "axios";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const TopSellers = () => {
   const [sellers, setSellers] = useState([]);
@@ -29,7 +30,13 @@ const TopSellers = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-in"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -38,9 +45,12 @@ const TopSellers = () => {
             <ol className="author_list">
               {loading
                 ? new Array(12).fill(0).map((_, index) => (
-                     <li key={index} className="d-flex align-items-center mb-3">
+                    <li key={index} className="d-flex align-items-center mb-3">
                       <div className="author_list_pp me-3">
-                        <span className="placeholder rounded-circle" style={{ width: "50px", height: "50px" }}></span>
+                        <span
+                          className="placeholder rounded-circle"
+                          style={{ width: "50px", height: "50px" }}
+                        ></span>
                       </div>
                       <div className="author_list_info w-100">
                         <span className="placeholder col-6 d-block mb-2"></span>
@@ -49,7 +59,13 @@ const TopSellers = () => {
                     </li>
                   ))
                 : sellers.map((sellers, index) => (
-                    <li key={sellers.id || index}>
+                    <li
+                      key={sellers.id || index}
+                      data-aos="fade-in"
+                      data-aos-delay="100"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                    >
                       <div className="author_list_pp">
                         <Link to={`/author/${sellers.authorId}`}>
                           <img
