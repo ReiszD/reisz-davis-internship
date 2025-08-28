@@ -6,6 +6,8 @@ import axios from "axios";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import OwlCarousel from "react-owl-carousel";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HotCollections = () => {
   const [collections, setCollections] = useState([]);
@@ -49,7 +51,13 @@ const HotCollections = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div
+              className="text-center"
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <h2>Hot Collections</h2>
               <div className="small-border bg-color-2"></div>
             </div>
@@ -81,7 +89,13 @@ const HotCollections = () => {
             <OwlCarousel className="owl-theme" {...options}>
               {collections.map((item, index) => (
                 <div className="gap-4" key={item.id || index}>
-                  <div className="nft_coll">
+                  <div
+                    className="nft_coll"
+                    data-aos="fade-in"
+                    data-aos-delay="100"
+                    data-aos-duration="1000"
+                    data-aos-easing="ease-in-out"
+                  >
                     <div className="nft_wrap">
                       <Link to={`/item-details/${item.nftId}`}>
                         <img
